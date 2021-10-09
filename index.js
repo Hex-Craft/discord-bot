@@ -4,10 +4,6 @@ const mysql = require("mysql2/promise");
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 const prefix = '!';
 
-// MYSQL
-
-
-
 //FUNCTIONS
 
 function logger(type, username, output) {
@@ -76,9 +72,6 @@ client.on("message", msg => {
   switch (cmd) {
     case 'ping':
       msg.reply('Websocket heartbeat: ${client.ws.ping}ms.');
-      break;
-    case 'mimbol':
-      msg.reply("biblol");
       break;
     case 'balance':
       getUserBalance(msg.author.username).then( function(result) { msg.reply('Ваш баланс: ' + result + ' хекселей') } );
