@@ -1,4 +1,4 @@
-module.exports = function (msg,funct,config,Client) {
+module.exports = function (msg,funct,config,client) {
     if (!msg.content.startsWith(config.discord.prefix)) return;
 
     const args = msg.content.trim().split(/ +/g);

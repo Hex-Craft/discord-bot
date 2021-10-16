@@ -9,5 +9,5 @@ var comm = require("./commands.js");
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
 client.on('ready', () => { console.log('Bot started.'); })
-client.on("message", (msg)=>{comm(msg,func,config,Client)})
+client.on("message", (msg)=>{comm(msg,func,config,client)})
 client.login(config.discord.token);
