@@ -21,15 +21,12 @@ module.exports = {
 
     "getDateTime": function () {
         var date = new Date();
-        var hour = date.getHours();
-        hour = (hour < 10 ? "0" : "") + hour;
-
-        var min = date.getMinutes();
-        min = (min < 10 ? "0" : "") + min;
-
-        var sec = date.getSeconds();
+        var hour = date.getHours(),
+            min = date.getMinutes(),
+            sec = date.getSeconds();
+        hour = (hour < 10 ? "0" : "") + hour,
+        min = (min < 10 ? "0" : "") + min,
         sec = (sec < 10 ? "0" : "") + sec;
-
         return hour + ":" + min + ":" + sec;
     },
 

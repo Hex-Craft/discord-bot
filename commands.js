@@ -5,17 +5,20 @@ module.exports = function (msg,funct,config,client) {
     const cmd = args[0].slice(config.discord.prefix.length).toLowerCase();
 
     funct.logger('Command', msg.author.username, cmd);
-
+    function reply(msg){
+        msg.reply(msg);
+        funct.logger('Reply: ', msg.author.username, msg);
+    }
     switch (cmd) {
         case 'ping':
-            msg.reply('Websocket heartbeat: ${client.ws.ping}ms.');
+            reply('Websocket heartbeat: ' + client.ws.ping + 'ms.');
             break;
         case 'mimbol':
-            msg.reply("biblol");
+            reply("biblol");
             break;
         case 'balance':
             funct.getUserBalance(msg.author.username).then(function (result) {
-                msg.reply('Ваш баланс: ' + result + ' хекселей')
+                reply('Ваш баланс: ' + result + ' хекселей')
             });
             break;
         case 'token':
